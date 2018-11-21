@@ -9,9 +9,7 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as Hammer from 'hammerjs';
 import {
-  RouterModule,
-  Routes
-} from '@angular/router';
+  RouterModule} from '@angular/router';
 
 import { APP_ROUTES } from './routes';
 import { AppComponent } from './app.component';
@@ -31,6 +29,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment.prod';
 import { AuthGuard } from '../guards/auth-guard';
+import { TabelaPeriodicaService } from '../service/tabela-periodica.service';
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
       // override hammerjs default configuration
@@ -79,7 +78,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
     DialogComponent,
     SpinNerComponent
 ],
-  providers: [Table, AuthService, AuthGuard,
+  providers: [Table, AuthService, AuthGuard, TabelaPeriodicaService,
     {provide: HAMMER_GESTURE_CONFIG,
     useClass: MyHammerConfig}
     ],

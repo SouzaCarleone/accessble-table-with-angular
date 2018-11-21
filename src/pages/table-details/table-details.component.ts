@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TabelaPeriodicaService } from '../../service/tabela-periodica.service';
+
 
 @Component({
 moduleId: module.id,
@@ -22,8 +24,25 @@ export class GrupoDetailsComponent {}
   templateUrl: './table-details.component.html',
   styleUrls: ['./table-details.component.scss']
 })
-export class TableDetailsComponent {
+export class TableDetailsComponent implements OnInit {
   step = 0;
+  tableArray = [];
+
+
+  constructor (private tableDetails: TabelaPeriodicaService) { }
+
+  ngOnInit() {
+      this.tableDetails.getInfoList().subscribe(
+        list => {
+            this.tableArray = list.map(item => {
+              return {
+                  key: item.key,
+                ...item.payload.val()
+              };
+            });
+        }
+      );
+  }
 
   setStep(index: number) {
     this.step = index;
