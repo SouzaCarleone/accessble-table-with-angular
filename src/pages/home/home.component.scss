@@ -1,0 +1,108 @@
+	.home-section {
+		background-color: #00897B;
+		display: table;
+    	width: 100%;
+    	height: 35vh;
+		max-height: 100vh;
+		min-height: 100px;
+
+
+		#cover-content{
+		vertical-align: middle;
+		text-align: center;
+		padding-top: 5%;
+
+		h1 {
+			color: rgb(255, 255, 255);
+      		letter-spacing: 1pt;
+			font-weight: 100;
+			line-height: 40pt;
+			font-size: 40pt;
+			margin: 20px 20px 0;
+			text-transform: uppercase;
+			}
+		}
+		@media(max-width: 680px){
+					#cover-content{
+						vertical-align: middle;
+						text-align: center;
+						padding: 10%;
+					h1 {
+						color: rgb(255, 255, 255);
+						letter-spacing: 1pt;
+						font-weight: 400;
+						line-height: 25pt;
+						font-size: 18pt;
+						font-weight: bold;
+						margin: 20px 20px 0;
+						text-transform: uppercase;
+						}
+				}
+			}
+}
+.middle-item{
+	background-color: #fff;
+	padding-top: 3%;
+	}
+	.area-card{
+		margin-left: 15px;
+		display: flex;
+		align-items: center ;
+		.card-title{
+			text-align: center;
+			text-transform: uppercase;
+			width: 20rem;
+		}
+			@media (max-width: 680px) {
+				margin-left: 0;
+				display:inline;
+				align-items: center ;
+
+				}
+	}
+
+@media (max-width: 680px) {
+	.area-card{
+		height: 100%;
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.card-title{
+		   text-align: center;
+		   text-transform: uppercase;
+		   width: 15rem;
+			}
+		}
+}
+.area-social-buttons{
+	padding: 4%;
+	float: right;
+
+	.home-card-2{
+		max-width: 400px;
+
+		.mat-card-title{
+			text-align: center;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	  }
+
+	  .example-header-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #00897B;
+		background-size: cover;
+		.mat-icon{
+			color: #fff;
+		}
+	  }
+	  .mat-card-content{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	  }
+}
+

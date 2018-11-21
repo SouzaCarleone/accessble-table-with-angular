@@ -1,0 +1,151 @@
+.container{
+    padding-top: 4%;
+
+	#location{
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.button-row {
+		display:inline;
+		text-align: center;
+		margin-right: 9%;
+
+		.mat-raised-button{
+			float: right;
+			font-size: 18px;
+			margin: 10px;
+			width: 20rem;
+			padding: 10px;
+		}
+	  }
+	  .text-container{
+		  text-align: center;
+	  }
+
+
+	@media (max-width: 680px) {
+		#location{
+			height: auto;
+			display: flex;
+			font-size: 14px;
+			align-items: center;
+			justify-content: center;
+			padding-top: 10%;
+		}
+
+		.button-row {
+			display:inline;
+			text-align: center;
+			margin-right: 9%;
+
+			.mat-raised-button{
+				float: right;
+				font-size: 18px;
+				margin: 10px;
+				width: 10rem;
+				padding: 10px;
+			}
+		  }
+	}
+}
+
+
+.middle-conteiner{
+	margin-left: 10%;
+	margin-right: 10%;
+
+	@media (max-width:680px){
+		margin: 0;
+
+	}
+}
+#demo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.mat-chip-list{
+	.mat-chip {
+		text-align: center;
+		max-width: 200px;
+		font-size: 14pt;
+	  }
+
+}
+
+@media (max-width:680px){
+	.mat-expansion-panel {
+		.mat-expansion-panel-header{
+			padding: 4%;
+		}
+	}
+}
+
+.middle-item{
+	background-color: #fff;
+	padding-top: 3%;
+	}
+	.area-card{
+		margin-right: 15px;
+		display: flex;
+		align-items: center ;
+		.card-title{
+			text-align: center;
+			text-transform: uppercase;
+			width: 20rem;
+		}
+			@media (max-width: 680px) {
+				margin-left: 0;
+				display:inline;
+				align-items: center ;
+
+				}
+	}
+
+@media (max-width: 680px) {
+	.area-card{
+		height: 100%;
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.card-title{
+		   text-align: center;
+		   text-transform: uppercase;
+		   width: 15rem;
+			}
+		}
+}
+
+.area-social-buttons{
+	padding: 4%;
+	float: right;
+
+	.home-card-2{
+		max-width: 400px;
+
+		.mat-card-title{
+			text-align: center;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	  }
+
+	  .example-header-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #00897B;
+		background-size: cover;
+		.mat-icon{
+			color: #fff;
+		}
+	  }
+	  .mat-card-content{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	  }
+}

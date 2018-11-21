@@ -1,0 +1,360 @@
+<div fxLayout="column" class="menu-top">
+	<mat-toolbar color="primary" class="toolbar">
+		<span>
+			<button mat-button (click)="onClick('A')">
+				Blocos</button>
+		</span>
+		<span>
+			<button mat-button (click)="onClick('B')">
+				Grupos</button>
+		</span>
+		<span>
+			<button mat-button (click)="onClick('C')">
+				Elementos</button>
+		</span>
+	</mat-toolbar>
+</div>
+<div class="card-table" fxLayout="column" [ngSwitch]="hide">
+	<mat-card *ngSwitchDefault>
+		<mat-card-content>
+			<h2 class="example-h2">Inserir Conteúdos para Blocos</h2>
+			<mat-tab-group class="demo-tab-group" #tabGroup (selectedTabChange)="tabChanged($event)">
+				<mat-tab label="Bloco S">
+					<mat-horizontal-stepper>
+						<mat-step [stepControl]="firstFormGroup">
+							<form [formGroup]="firstFormGroup" class="form-conteiner" #f="ngForm" >
+								<ng-template matStepLabel>Informações sobre bloco s</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" formControlName="titulo" name="titulo"  required>
+
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo" formControlName="conteudo"  (input)="Dtexto=$event.target.value"  required="required"></textarea>
+
+								</div>
+								<div>
+									<button mat-button (click)="onSubmit(f)">Publicar</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form>
+								<ng-template matStepLabel>Outras Informações</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico"  name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Editar</ng-template>
+							You are now done.
+							<div>
+								<button mat-button>Salvar Edição</button>
+								<button mat-button matStepperPrevious>Anterior</button>
+							</div>
+						</mat-step>
+					</mat-horizontal-stepper>
+				</mat-tab>
+				<mat-tab label="Bloco P">
+					<mat-horizontal-stepper>
+						<mat-step [stepControl]="firstFormGroup">
+							<form class="form-conteiner">
+								<ng-template matStepLabel>Informações sobre bloco p</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form>
+								<ng-template matStepLabel>Outras Informações</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico"  name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Editar</ng-template>
+							You are now done.
+							<div>
+								<button mat-button>Salvar Edição</button>
+								<button mat-button matStepperPrevious>Anterior</button>
+							</div>
+						</mat-step>
+					</mat-horizontal-stepper>
+				</mat-tab>
+				<mat-tab label="Bloco D">
+					<mat-horizontal-stepper>
+						<mat-step [stepControl]="firstFormGroup">
+							<form  class="form-conteiner">
+								<ng-template matStepLabel>Informações sobre bloco d</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico"  name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form>
+								<ng-template matStepLabel>Outras Informações</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Editar</ng-template>
+							You are now done.
+							<div>
+								<button mat-button>Salvar Edição</button>
+								<button mat-button matStepperPrevious>Anterior</button>
+							</div>
+						</mat-step>
+					</mat-horizontal-stepper>
+				</mat-tab>
+				<mat-tab label="Bloco F">
+					<mat-horizontal-stepper>
+						<mat-step [stepControl]="firstFormGroup">
+							<form  class="form-conteiner">
+								<ng-template matStepLabel>Informações sobre bloco f</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"   (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form>
+								<ng-template matStepLabel>Outras Informações</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value" required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Editar</ng-template>
+							You are now done.
+							<div>
+								<button mat-button>Salvar Edição</button>
+								<button mat-button matStepperPrevious>Anterior</button>
+							</div>
+						</mat-step>
+					</mat-horizontal-stepper>
+
+				</mat-tab>
+			</mat-tab-group>
+		</mat-card-content>
+	</mat-card>
+
+	<mat-card *ngSwitchCase="'B'">
+		<mat-card-content>
+			<h2 class="example-h2">Inserir Conteúdos para Grupos</h2>
+			<mat-tab-group class="demo-tab-group">
+				<mat-tab label="Grupo 1">
+					<mat-horizontal-stepper>
+						<mat-step [stepControl]="firstFormGroup">
+							<form class="form-conteiner">
+								<ng-template matStepLabel>Informações sobre Grupo</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico"  name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"   (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form>
+								<ng-template matStepLabel>Outras Informações</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Editar</ng-template>
+							You are now done.
+							<div>
+								<button mat-button>Salvar Edição</button>
+								<button mat-button matStepperPrevious>Anterior</button>
+							</div>
+						</mat-step>
+					</mat-horizontal-stepper>
+				</mat-tab>
+			</mat-tab-group>
+		</mat-card-content>
+	</mat-card>
+
+	<mat-card *ngSwitchCase="'C'">
+		<mat-card-content>
+			<h2 class="example-h2">Inserir Conteúdos para Elementos</h2>
+			<mat-tab-group class="demo-tab-group">
+				<mat-tab label="Hidrogênio">
+					<mat-horizontal-stepper>
+						<mat-step [stepControl]="firstFormGroup">
+							<form class="form-conteiner">
+								<ng-template matStepLabel>Informações sobre Grupo</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form>
+								<ng-template matStepLabel>Informações sobre Bloco</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico"  name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"  (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="firstFormGroup">
+							<form >
+								<ng-template matStepLabel>Outras Informações</ng-template>
+								<p>
+									<mat-form-field appearance="outline">
+										<mat-label>Título desse Tópico</mat-label>
+										<input matInput placeholder="Título do Tópico" name="titulo"  required>
+									</mat-form-field>
+								</p>
+								<div class="example-container">
+									<textarea placeholder="Área de Texto" rows="6" name="conteudo"   (input)="Dtexto=$event.target.value"  required></textarea>
+								</div>
+								<div>
+									<button mat-button>Publicar</button>
+									<button mat-button matStepperPrevious>Anterior</button>
+									<button mat-button matStepperNext>Próximo</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Editar</ng-template>
+							You are now done.
+							<div>
+								<button mat-button>Salvar Edição</button>
+								<button mat-button matStepperPrevious>Anterior</button>
+							</div>
+						</mat-step>
+					</mat-horizontal-stepper>
+				</mat-tab>
+			</mat-tab-group>
+		</mat-card-content>
+	</mat-card>
+</div>
+<div>
+	<app-footer></app-footer>
+</div>

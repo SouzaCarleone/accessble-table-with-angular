@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+    line-height: 30pt;
+
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: 100;
+}
+
+h1 > button {
+    vertical-align: bottom !important;
+}
+
+h1 > .mat-icon-button {
+    line-height: 25px !important;
+}
+
+.container-fluid {
+    width: 85vw;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.text-container {
+    text-align: left;
+    margin-right: 6%;
+    margin-left: 6%;
+    p {
+        margin: 10px 0 25px 0;
+    }
+
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+

@@ -1,0 +1,23 @@
+<div class="container" >
+    <div class="location">
+        <h2>Você está em: A Tabela/O Elemento</h2>
+    </div>
+    <div class="card-elemento example-card" aria-live="assertive" aria-atomic='true'>
+                <mat-list role="listaPropriedadesElementos" id="lista">
+            <section *ngIf="code; else elseBlock">
+                    <mat-list-item *ngFor="let atomic of elemento">
+                        <p matLine>
+                            <span> {{ atomic }} </span>
+                        </p>
+                    </mat-list-item>
+            </section>
+            <ng-template #elseBlock>
+                    <mat-list-item *ngFor="let elemento of header">
+                        <p matLine>
+                            <span> {{elemento }} </span>
+                        </p>
+                    </mat-list-item>
+            </ng-template>
+        </mat-list>
+    </div>
+</div>

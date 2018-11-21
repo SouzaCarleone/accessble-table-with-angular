@@ -1,0 +1,128 @@
+<div class="container" fxFlex fxLayout="column" fxLayoutAlign="center">
+	<div id="location">
+		<h2>Instruções e Ajuda</h2>
+	</div>
+	<div class="text-container">
+		<p>
+			Esta é a tela de ajuda, para ler as instruções basta seguir os itens abaixo:</p>
+	</div>
+	<div class="middle-conteiner">
+		<mat-accordion>
+			<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						Como é a Navegação na Tabela no Computador ?
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>
+					Para navegar entre os elementos da tabela periódica você deve usar o teclado do seu computador. As teclas para
+					navegação
+					são: tecla W para cima, tecla Z para baixo, tecla A para esquerda, a tecla D para direita e a tecla Q é um atalho
+					para encontrar
+					um elemento pela sua localização na tabela, linha e coluna.
+				</p>
+				<mat-action-row>
+					<button mat-button color="primary" (click)="nextStep()">Próximo</button>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						Como é a Navegação na Tabela no Celular ?
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>
+					Para navegar entre os elementos da tabela periódica usando o seu smartphone, você deve usar dois dedos fazendo
+					movimentos na tela, para direita, esquerda, cima e para baixo.
+					Ou seja, caso a direção seja baixo basta deslizar os dedos para este mesmo sentido. Caso para cima,
+					deslizar os dedos nesta mesma direção. Caso para o lado direito basta deslizar os dedos para esta mesma direção,
+					assim como para o lado esquerdo deslizar os dedos para esta mesma direção.
+
+				</p>
+				<mat-action-row>
+					<button mat-button color="warn" (click)="prevStep()">Anterior</button>
+					<button mat-button color="primary" (click)="nextStep()">Próximo</button>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						Existe Alguma tecla de Atalho para Navegação em Computadores ?
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>
+					Sim. A tecla de atalho é a tecla Q . Com esta tecla você poderá buscar um elemento especifico
+					na tabela periódica, digitando a linha e coluna do mesmo.
+				</p>
+				<mat-action-row>
+					<button mat-button color="warn" (click)="prevStep()">Anterior</button>
+					<button mat-button color="primary" (click)="nextStep()">Próximo</button>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle="true">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						Quais informações vou encontrar na tabela periódica web ?
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>
+					Durante a navegação na tabela os campos exibidos na tela apresentará as seguintes informações: primeiro o número
+					atômico,
+					segundo a letra ou símbolo que representa o elemento, em seguida o nome do elemento e por fim a massa atômica, que
+					é
+					uma sequência numérica.
+				</p>
+				<mat-action-row>
+					<button mat-button color="warn" (click)="prevStep()">Anterior</button>
+					<button mat-button color="primary" (click)="nextStep()">Próximo</button>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle="true">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						Qual sintetizador de voz devo usar ?
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>
+					Recomendamos usar o software sintetizador de voz de sua preferência. Contudo há o
+					<a href="https://www.nvaccess.org/download/" target="_blanck">NVDA</a> um software sintetizador de voz gratruito,
+					assim como outros disponíveis na internet, para sistemas operacionais
+					como Windowns e LInux.
+				</p>
+				<mat-action-row>
+					<button mat-button color="warn" (click)="prevStep()">Anterior</button>
+					<button mat-button color="primary" (click)="nextStep()">Próximo</button>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle="true">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						Como devo usar a tabela periódica web ?
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>A tabela periódica web acessível pode ser explorada de diversas formas. Ela foi desenvolvida com o objetivo
+					principal de disponibilizar informações básicas sobre a tabela periódica e que poderão contribuir para um melhor
+					entendimento e inclusão das pessoas
+					com deficiência visual no ambiente escolar, auxíliando em alguma atividade que envolva seu uso, mas ela também
+					pode ser usada em qualquer lugar, desde que se tenha acesso a um computador
+					e/ou celular com conexão a internet.
+				</p>
+				<mat-action-row>
+					<button mat-button color="warn" (click)="prevStep()">Anterior</button>
+					<button mat-button color="primary" (click)="nextStep()">Próximo</button>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+		</mat-accordion>
+	</div>
+	<div class="button-row">
+		<button matTooltip="Botão Ir à Tabela" matTooltipPosition="after" mat-raised-button [routerLink]="['/elemento']"
+		 color="primary">Ir à Tabela</button>
+	</div>
+	<app-footer></app-footer>
+</div>

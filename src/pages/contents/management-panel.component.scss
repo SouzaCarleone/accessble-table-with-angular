@@ -1,0 +1,69 @@
+.menu-card {
+width: 50% ;
+height: 8vh;
+}
+.area-submenu{
+  margin-top: 3%;
+  height: auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+#button-menu-adm{
+  padding: 3%;
+  width: 6rem;
+  .mat-icon{
+    margin-left: 5%;
+  }
+}
+
+.menu-top{
+  padding-top: 4%;
+}
+.demo-tab-content {
+  padding: 16px;
+}
+.card-table{
+  .mat-card{
+    margin: 4%;
+  }
+}
+
+.form-conteiner{
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+textarea, .mat-select {
+  width: 100%;
+  border-radius: 3px;
+  padding: 15px 15px;
+  font-size: 14pt;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  font-family: sans-serif;
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+@media (max-width: 680px) {
+  .menu-top{
+    padding-top: 13%;
+  }
+}
+@media only screen and (max-width: 980px) and (min-width: 780px) {
+  .menu-top{
+    padding-top: 7%;
+  }
+}

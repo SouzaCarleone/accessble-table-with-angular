@@ -1,0 +1,46 @@
+{
+  "name": "primeiro-projeto",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build -prod --aot --sourcemaps=false --progress=false --build-optimizer=true",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular-devkit/core": "^0.6.1",
+    "@angular/animations": "^5.2.10",
+    "@angular/cdk": "^5.2.5",
+    "@angular/common": "^5.2.10",
+    "@angular/compiler": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/flex-layout": "2.0.0-beta.10-4905443",
+    "@angular/forms": "^5.2.10",
+    "@angular/http": "^5.2.10",
+    "@angular/material": "^5.2.5",
+    "@angular/platform-browser": "^5.2.10",
+    "@angular/platform-browser-dynamic": "^5.2.10",
+    "@angular/router": "^5.2.10",
+    "angular-hammer": "^2.2.0",
+    "angularfire2": "^5.0.0-rc.9",
+    "core-js": "^2.5.6",
+    "firebase": "^4.13.1",
+    "grpc": "^1.13.0",
+    "rxjs": "^5.5.10",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@angular/cli": "^6.0.7",
+    "@angular/compiler-cli": "^5.2.10",
+    "@angular/language-service": "^5.2.10",
+    "@types/hammerjs": "^2.0.35",
+    "@types/node": "^8.0.58",
+    "codelyzer": "^4.0.2",
+    "ts-node": "~3.3.0",
+    "tslint": "~5.8.0",
+    "typescript": "~2.4.2",
+    "@angular-devkit/build-angular": "~0.6.6"
+  }
+}
