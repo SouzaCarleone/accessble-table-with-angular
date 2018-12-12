@@ -5,8 +5,7 @@ import 'rxjs/Rx';
 import * as firebase from 'firebase/app';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatTabChangeEvent, MatSnackBar } from '@angular/material';
-import { AuthService } from '../../service/auth.service';
-import { AuthGuard } from '../../guards/auth-guard';
+
 
 
 @Component({
@@ -25,7 +24,7 @@ import { AuthGuard } from '../../guards/auth-guard';
 
 
     constructor(private _formBuilder: FormBuilder,
-       public snackBar: MatSnackBar, private auth: AuthService, private authGuard: AuthGuard,
+       public snackBar: MatSnackBar, /* private auth: AuthService ,*/  /* private authGuard: AuthGuard ,*/
       private fdb: AngularFireDatabase) {   }
 
     ngOnInit() {
@@ -33,7 +32,7 @@ import { AuthGuard } from '../../guards/auth-guard';
         conteudo: new FormControl('', [Validators.required]),
         titulo: new FormControl('', [Validators.required])
          });
-         if (this.authGuard.canActivate && this.auth.authenticated) {
+        /*  if (this.authGuard.canActivate && this.auth.authenticated) {
          this.snackBar.open('Bem-Vindo ' + this.auth.name, 'Login com Sucesso', { duration: 2000 });
         } else if (!this.auth.authenticated) {
           this.auth.router.navigate(['/']);
@@ -41,7 +40,7 @@ import { AuthGuard } from '../../guards/auth-guard';
         } else if (!this.auth.authenticated) {
           this.auth.logOut();
           this.auth.router.navigate(['/']);
-        }
+        } */
     }
 
     tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {

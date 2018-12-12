@@ -1,7 +1,8 @@
 import {
   Component, OnInit, ElementRef,
-  HostListener, Inject} from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+  HostListener, Inject
+} from '@angular/core';
+import { Observable } from 'rxjs';
 import 'rxjs/Rx';
 import * as Hammer from 'hammerjs';
 import { Http, Response } from '@angular/http';
@@ -55,7 +56,7 @@ export class DialogComponent {
 export class DetailsComponent implements OnInit {
   csvUrl = '/assets/dados.csv';
   elemento = []; linha: 0; coluna: 0; code = false; header; titulo: any; buttonHelp = false;
-  direcao = 0; tempo = 0;
+  direcao = 0; tempo = 0; move;
 
 
   constructor(private http: Http, private table: Table, private el: ElementRef,
@@ -69,28 +70,42 @@ export class DetailsComponent implements OnInit {
     // setar linha e coluna para voltar para o inicio da tabela
     this.table.setLinha(this.linha);
     this.table.setColuna(this.coluna);
+    this.move = 0;
 
     document.addEventListener('keydown', (e) => {
       this.code = true;
-      if (e.keyCode === 90) { this.table.mover(0); } // Baixo
-      if (e.keyCode === 65) { this.table.mover(1); } // Esquerda
-      if (e.keyCode === 87) { this.table.mover(2); } // Cima
-      if (e.keyCode === 68) { this.table.mover(3); } // Direita
-      if (e.keyCode === 81) { this.openDialog(); }
+      if (e.keyCode === 90) { this.table.mover(0);
+      this.move = 1;
+    } // Baixo
+      if (e.keyCode === 65) { this.table.mover(1);
+        this.move = 1;
+      } // Esquerda
+      if (e.keyCode === 87) { this.table.mover(2);
+        this.move = 1;
+      } // Cima
+      if (e.keyCode === 68) { this.table.mover(3);
+        this.move = 1;
+      }
+      // Direita
+     // if (e.keyCode === 81) { this.openDialog(); }
     }, false);
 
     const source = Observable.fromEvent(document, 'keydown');
     source.subscribe(
-      ( ) => {
+      () => {
         this.elemento = this.table.getDados()[this.table.getLinha()][this.table.getColuna()].split(',');
         this.titulo = this.elemento[2];
-        if (this.elemento.length === 1) {
+        if (this.elemento.length === 1 && this.move !== 0) {
           this.snackBar.open('Continue a frente', '', { duration: 3000 });
+        } else if (this.move !== 0) {
+          this.snackBar.open('Você chegou no elemento ' + this.elemento[2], '', { duration: 3000 });
         }
+        this.move = 0;
       },
       (error) => {
         this.snackBar.open('Erro durante operação', 'RETRY', { duration: 3000 });
-        console.log(error); }
+        console.log(error);
+      }
     );
   }
 
@@ -101,7 +116,7 @@ export class DetailsComponent implements OnInit {
       recognizers: [
         [Hammer.Swipe, { direction: Hammer.DIRECTION_ALL }],
       ]
-    }, );
+    });
     h.get('swipe').set({ enable: true });
     h.on('swipe', (ev) => {
       if (this.tempo < ev.deltaTime) {
@@ -131,6 +146,11 @@ export class DetailsComponent implements OnInit {
       this.elemento = this.table.getDados()[this.table.getLinha()][this.table.getColuna()].split(',');
       console.log(this.elemento);
       this.titulo = this.elemento[2];
+      if (this.elemento.length === 1) {
+        this.snackBar.open('Continue a frente', '', { duration: 3000 });
+      } else if (this.elemento[0] >= 1) {
+        this.snackBar.open('Você chegou no elemento ' + this.elemento[2], '', { duration: 3000 });
+      }
     }
   }
   private handleError(error: any) {

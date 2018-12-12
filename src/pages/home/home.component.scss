@@ -1,45 +1,4 @@
-	.home-section {
-		background-color: #00897B;
-		display: table;
-    	width: 100%;
-    	height: 35vh;
-		max-height: 100vh;
-		min-height: 100px;
 
-
-		#cover-content{
-		vertical-align: middle;
-		text-align: center;
-		padding-top: 5%;
-
-		h1 {
-			color: rgb(255, 255, 255);
-      		letter-spacing: 1pt;
-			font-weight: 100;
-			line-height: 40pt;
-			font-size: 40pt;
-			margin: 20px 20px 0;
-			text-transform: uppercase;
-			}
-		}
-		@media(max-width: 680px){
-					#cover-content{
-						vertical-align: middle;
-						text-align: center;
-						padding: 10%;
-					h1 {
-						color: rgb(255, 255, 255);
-						letter-spacing: 1pt;
-						font-weight: 400;
-						line-height: 25pt;
-						font-size: 18pt;
-						font-weight: bold;
-						margin: 20px 20px 0;
-						text-transform: uppercase;
-						}
-				}
-			}
-}
 .middle-item{
 	background-color: #fff;
 	padding-top: 3%;

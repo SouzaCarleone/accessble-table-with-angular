@@ -23,12 +23,9 @@ import { Table } from './../models/table';
 import { HelpComponent } from '../pages/help/help.component';
 import { FooterComponent } from '../pages/footer/footer.component';
 import { MenuChangeDirective } from './menu-change.directive';
-import { AuthService } from '../service/auth.service';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment.prod';
-import { AuthGuard } from '../guards/auth-guard';
 import { TabelaPeriodicaService } from '../service/tabela-periodica.service';
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
@@ -64,7 +61,6 @@ export class MyHammerConfig extends HammerGestureConfig  {
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment),
     RouterModule.forRoot(APP_ROUTES)
@@ -78,7 +74,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
     DialogComponent,
     SpinNerComponent
 ],
-  providers: [Table, AuthService, AuthGuard, TabelaPeriodicaService,
+  providers: [Table, TabelaPeriodicaService,
     {provide: HAMMER_GESTURE_CONFIG,
     useClass: MyHammerConfig}
     ],

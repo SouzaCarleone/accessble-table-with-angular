@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase} from '@angular/fire/database';
+import { map } from 'rxjs/operators';
+import { keyValuesToMap } from '@angular/flex-layout/extended/typings/style/style-transforms';
+
 
 
 @Injectable()
 export class TabelaPeriodicaService {
-	tabelaPeriodica: AngularFireList<any>;
-	constructor(private firebase: AngularFireDatabase) {
+	constructor(private fbs: AngularFireDatabase) {
 	}
 	getInfoList() {
-		this.tabelaPeriodica = this.firebase.list('tabela-periodica');
-		return this.tabelaPeriodica.snapshotChanges();
+		return this.fbs.list('tabela-periodica').valueChanges();
 	}
 }

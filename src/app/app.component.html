@@ -1,6 +1,5 @@
 <mat-toolbar color="primary" class="toolbar"  (scroll)="scrollHandler(event)"  >
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu"
-       >
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
             <mat-icon>menu</mat-icon>
         </button>
         <div *ngIf="scrollD"  class="titulo-menu"><span>Tabela Periódica</span></div>
@@ -18,7 +17,6 @@
                 </ng-template>
             </mat-menu>
         </div>
-
         <mat-menu #menu="matMenu" class="menu-panel">
             <button mat-menu-item [routerLink]="['']">
                 <mat-icon aria-hidden="true">account_balance</mat-icon>

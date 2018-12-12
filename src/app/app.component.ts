@@ -1,9 +1,7 @@
 import { Component, ViewChild, OnInit, HostListener } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
-import { AuthService } from '../service/auth.service';
 import { MatSnackBar } from '@angular/material';
 import * as firebase from 'firebase';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,9 +15,7 @@ export class AppComponent implements OnInit {
   scrollD = false;
   user: Observable<firebase.User>;
 
-  constructor(private afAuth: AngularFireAuth, private auth: AuthService, public snackBar: MatSnackBar) {
-    this.user = afAuth.authState;
-  }
+  constructor(public snackBar: MatSnackBar) {  }
 
 
   ngOnInit() { }
@@ -36,7 +32,7 @@ export class AppComponent implements OnInit {
       }
     }
 
-  signWithGoogle(): void {
+ /*  signWithGoogle(): void {
     this.afAuth.auth
         .signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(res => {
@@ -85,5 +81,5 @@ export class AppComponent implements OnInit {
     this.snackBar
     .open('Logout Bem Sucessido!', '', { duration: 5000 });
   }
-
+ */
 }

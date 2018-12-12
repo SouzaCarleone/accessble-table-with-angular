@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/* import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
 	public authState: any = null;
-	public user: Observable<firebase.User>;
+	public user: Observable<any>;
 	public avatar: string = null;
 	public uid: string = null;
 	public name: string = null;
@@ -55,3 +55,4 @@ export class AuthService {
 }
 
 
+ */
