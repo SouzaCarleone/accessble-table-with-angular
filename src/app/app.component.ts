@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.trigger.openMenu();
   }
   @HostListener('window:scroll', ['$event'])
-    scrollHandler(event) {
+    scrollHandler() {
       if (window.scrollY >= 40) {
         this.scrollD = true;
       } else {

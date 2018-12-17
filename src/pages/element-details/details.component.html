@@ -3,16 +3,16 @@
         <h2>Você está em: <a [routerLink]="['/home']">O Projeto/</a>A Tabela</h2>
     </div>
     <div class="card-elemento example-card" aria-live="assertive" aria-atomic='true'>
-        <mat-list role="listaPropriedadesElementos" id="lista">
+        <mat-list  id="lista" role="list">
             <section *ngIf="code; else elseBlock">
-                    <mat-list-item *ngFor="let atomic of elemento">
+                    <mat-list-item *ngFor="let atomic of elemento" role="listitem">
                         <p matLine>
                             <span> {{ atomic }} </span>
                         </p>
                     </mat-list-item>
             </section>
             <ng-template #elseBlock>
-                    <mat-list-item *ngFor="let elemento of header">
+                    <mat-list-item *ngFor="let elemento of header" role="listitem">
                         <p matLine>
                             <span> {{elemento }} </span>
                         </p>

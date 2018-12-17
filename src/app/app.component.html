@@ -1,19 +1,21 @@
-<mat-toolbar color="primary" class="toolbar"  (scroll)="scrollHandler(event)"  >
+<header>
+    <mat-toolbar color="primary" class="toolbar" (scroll)="scrollHandler(event)">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <div *ngIf="scrollD"  class="titulo-menu"><span>Tabela Periódica</span></div>
+        <div *ngIf="scrollD" class="titulo-menu"><span>Tabela Periódica</span></div>
         <span class="example-fill-remaining-space"></span>
         <div *ngIf="userAuth">
             <button mat-button [matMenuTriggerFor]="userMenu" aria-label="menu-usuário">
-                <img id="user-avatar" [src]="auth.avatar"> {{auth.name}}
+                <img id="user-avatar" alt="{{auth.name}}" [src]="auth.avatar" /> {{auth.name}}
                 <i class="caret"></i>
             </button>
             <mat-menu #userMenu="matMenu">
                 <ng-template matMenuContent let-name="name">
                     <button mat-menu-item (click)="sairApp()">
                         <mat-icon aria-hidden="true">subdirectory_arrow_right</mat-icon>
-                        Sair</button>
+                        Sair
+                    </button>
                 </ng-template>
             </mat-menu>
         </div>
@@ -32,7 +34,7 @@
                 <mat-icon aria-hidden="true">help_outline</mat-icon>
                 <span>Ajuda</span>
             </button>
-           <!--  <button mat-menu-item (click)="signWithGoogle()" *ngIf="!userAuth">
+            <!--  <button mat-menu-item (click)="signWithGoogle()" *ngIf="!userAuth">
                 <mat-icon aria-hidden="true">account_circle</mat-icon>
                 <span>Sign in</span>
             </button>
@@ -42,7 +44,5 @@
             </button> -->
         </mat-menu>
     </mat-toolbar>
-    <router-outlet></router-outlet>
-
-
-
+</header>
+<router-outlet></router-outlet>

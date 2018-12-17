@@ -11,11 +11,12 @@ import { Observable } from 'rxjs/Observable';
 export class HomeComponent implements OnInit {
     periodos: Observable<any[]>;
     items: Observable<any[]>;
-    periodo; nivel; subn;
+    home: boolean;
 
     constructor(private tabelaPeriodica: TabelaPeriodicaService) { }
 
     ngOnInit() {
+        this.home = true;
         this.items = this.tabelaPeriodica.getInfoList();
         console.log(JSON.stringify(this.items));
     }
