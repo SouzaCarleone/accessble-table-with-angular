@@ -27,6 +27,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment.prod';
 import { TabelaPeriodicaService } from '../service/tabela-periodica.service';
+import { HeaderComponent } from '../pages/header/header.component';
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
       // override hammerjs default configuration
@@ -39,6 +40,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
   declarations: [
     AppComponent,
     HomeComponent,
+    HeaderComponent,
     TableDetailsComponent,
     DetailsComponent,
     NotFoundComponent,

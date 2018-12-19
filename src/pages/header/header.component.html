@@ -1,0 +1,54 @@
+<header>
+    <mat-toolbar color="primary" class="toolbar" (scroll)="scrollHandler(event)">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div *ngIf="scrollD" class="titulo-menu"><span>Tabela Periódica</span></div>
+        <span class="example-fill-remaining-space"></span>
+        <div *ngIf="userAuth">
+            <button mat-button [matMenuTriggerFor]="userMenu" aria-label="menu-usuário">
+                <img id="user-avatar" alt="{{auth.name}}" [src]="auth.avatar" /> {{auth.name}}
+                <i class="caret"></i>
+            </button>
+            <mat-menu #userMenu="matMenu">
+                <ng-template matMenuContent let-name="name">
+                    <button mat-menu-item (click)="sairApp()">
+                        <mat-icon aria-hidden="true">subdirectory_arrow_right</mat-icon>
+                        Sair
+                    </button>
+                </ng-template>
+            </mat-menu>
+        </div>
+        <mat-menu #menu="matMenu" class="menu-panel">
+            <button mat-menu-item [routerLink]="['']">
+                <mat-icon aria-hidden="true">account_balance</mat-icon>
+                <span>O Projeto</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/elemento']">
+                <mat-icon aria-hidden="true">table_chart</mat-icon>A Tabela
+            </button>
+            <button mat-menu-item [routerLink]="['/conceitos']">
+                <mat-icon aria-hidden="true">aspect_ratio</mat-icon>Conceitos
+            </button>
+            <button mat-menu-item [routerLink]="['/ajuda']">
+                <mat-icon aria-hidden="true">help_outline</mat-icon>
+                <span>Ajuda</span>
+            </button>
+            <!--  <button mat-menu-item (click)="signWithGoogle()" *ngIf="!userAuth">
+                <mat-icon aria-hidden="true">account_circle</mat-icon>
+                <span>Sign in</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/gerenciador']" *ngIf="userAuth">
+                <mat-icon aria-hidden="true">assignment_turned_in</mat-icon>
+                <span>Gerenciador</span>
+            </button> -->
+        </mat-menu>
+	</mat-toolbar>
+	<div fxLayout="column">
+		<div class="home-section">
+			<div id="cover-content">
+				<h1>Tabela Periódica Acessível</h1>
+			</div>
+		</div>
+	</div>
+</header>
